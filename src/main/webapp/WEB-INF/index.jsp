@@ -24,6 +24,7 @@
 			<th>burger name</th>
 			<th>description</th>
 			<th>price</th>
+			<th>actions<th>
 		</tr>
 		<c:forEach var = "burger" items = "${burgers}" >
 			<tr>
@@ -31,16 +32,20 @@
 				<td><c:out value = "${burger.getName()}"></c:out></td>
 				<td><c:out value = "${burger.getDescription()}"></c:out></td>
 				<td><c:out value = "${burger.getPrice()}"></c:out></td>
+				<td><a href = "/edit/${burger.getId()}">edit</a>
 			</tr>
 		</c:forEach>
 	</table>
 	
 	<h1>Add Eine BURgER!</h1>
 		<form:form action = "/create" method = "POST" modelAttribute = "burger" class = "form" >
+			<form:label path="name">Burger Name</form:label>
 			<form:input type = "text" path ="name"/>
 			<form:errors path = "name" class = "text-danger"/>
+			<form:label path ="description">Burger Description</form:label>
 			<form:input type = "text" path = "description"/>
 			<form:errors path ="description" class = "text-danger"/>
+			<form:label path ="price">Price</form:label>
 			<form:input type = "number" path = "price"/>
 			<form:errors path = "price" class = "text-danger"/>
 			<input type = "submit" value = "submit">

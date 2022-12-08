@@ -1,6 +1,7 @@
 package com.kevin.burger.repositories;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -14,6 +15,8 @@ public interface BurgerRepository extends CrudRepository<Burger, Long> {
 	List<Burger> findByDescription(String description);
 	
 	List<Burger> findByName(String name);
+	
+	Optional<Burger> findById(Long id);
 	
 	Long deleteByName(String name);
 	
