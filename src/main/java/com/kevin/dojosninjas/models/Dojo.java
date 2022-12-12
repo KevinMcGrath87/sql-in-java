@@ -33,8 +33,21 @@ public class Dojo {
 	
 	public Dojo() {}
 	
-	public Dojo(String name) {
+	public Dojo(String name, String location, List<Ninja> ninjas) {
 		this.name = name;
+		this.location = location;
+		this.ninjas = ninjas; 
+	}
+//super inside of constructor?
+	public Dojo(Long id, @NotNull String name, @NotNull String location, Date createdAt, Date updatedAt,
+			List<Ninja> ninjas) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.location = location;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+		this.ninjas = ninjas;
 	}
 
 	public Long getId() {

@@ -13,7 +13,7 @@ import com.kevin.dojosninjas.models.Ninja;
 public interface NinjaRepository extends CrudRepository<Ninja, Long>{
 	List<Ninja> findAll();
 /////errors will probably come of this...	
-	Ninja save(Ninja ninja);
+//	Ninja save(Ninja ninja);
 	
 	Optional<Ninja> findById(Long id);
 	

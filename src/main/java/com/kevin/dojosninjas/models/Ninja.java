@@ -43,18 +43,16 @@ public class Ninja {
 		this.updatedAt = new Date();
 	}
 	@ManyToOne(fetch = FetchType.LAZY)
-	//this object contains the foreign key since it is this set that can iterate ...repeat values from the target set
 	@JoinColumn(name = "dojo_id")
-
-	//the name of the parameter/variable dojo corresponds to the name that is used to map the relation.
 	private Dojo dojo;
-	//empty constructor as to make this a bean...
+	//empty constructor as to make this a  bean...
 	public Ninja() {}
 	
 	public Ninja(String firstName, String lastName, int age, Dojo dojo ) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age; 
+		this.dojo = dojo;
 		
 	}
 	
